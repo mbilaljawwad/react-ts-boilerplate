@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'index.bundle.js',
+    filename: '[name].[contenthash].js',
   },
   mode: process.env.NODE_ENV || 'development',
     resolve: {
@@ -26,7 +26,16 @@ module.exports = {
         },
         {
           test: /\.(css|scss)$/,
-          use: ["style-loader", "css-loader"]
+          use: [
+            "style-loader", 
+            "@teamsupercell/typings-for-css-modules-loader",
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+              }
+            }
+           ]
         },
         {
           test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
@@ -35,6 +44,6 @@ module.exports = {
       ],
     },
     plugins: [
-      new HtmlWebpackPlugin({ template: path.join(__dirname, "src", "index.html") })
+      new HtmlWebpackPlugin({ template: path.join(__dirname, "public", "index.html") })
     ]
 }

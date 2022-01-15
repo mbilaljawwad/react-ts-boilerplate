@@ -1,13 +1,13 @@
 {
-  "name": "ui-toolkit",
+  "name": "react-typescript-boilerplate",
   "version": "1",
-  "description": "React Toolkit",
+  "description": "React TypeScript Boilerplate",
   "main": "index.js",
   "author": "Muhammad Bilal Jawwad",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "webpack": "webpack",
+    "build": "rmdir /s build && webpack",
     "start": "webpack serve"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
     "@babel/preset-typescript": "^7.16.5",
+    "@teamsupercell/typings-for-css-modules-loader": "^2.5.1",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "babel-loader": "^8.2.3",
@@ -30,6 +31,8 @@
     "path": "^0.12.7",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.2.6",
+    "typings-for-css-modules-loader": "^1.7.0",
+    "typings-for-scss-modules-loader": "^1.5.1",
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.7.1"
